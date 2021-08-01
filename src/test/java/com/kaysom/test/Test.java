@@ -1,8 +1,8 @@
 package com.kaysom.test;
 
 import com.kaysom.test.bean.ProductService;
-import com.kayson.springframework.BeanDefinition;
-import com.kayson.springframework.BeanFactory;
+import com.kayson.springframework.beans.factory.config.BeanDefinition;
+import com.kayson.springframework.beans.factory.support.DefaultListableBeanFactory;
 
 public class Test {
     public static void main(String[] args) {
@@ -20,5 +20,19 @@ public class Test {
         // done
         System.out.println(productService.getProductName());
         */
+
+
+        // 1.init BeanFactory
+        DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
+        // 2.register bean
+        BeanDefinition beanDefinition = new BeanDefinition(ProductService.class);
+        beanFactory.registerBeanDefinition("productService", beanDefinition);
+        // 3.get bean from bean factory
+        ProductService productService = (ProductService) beanFactory.getBean("productService");
+        productService.getProductName();
+        // 4.get bean from Singleton
+        ProductService productService_singleton = (ProductService) beanFactory.getBean("productService");
+        String productName = productService_singleton.getProductName();
+        System.out.println(productName);
     }
 }

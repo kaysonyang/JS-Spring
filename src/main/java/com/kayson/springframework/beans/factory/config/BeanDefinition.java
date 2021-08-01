@@ -1,4 +1,4 @@
-package com.kayson.springframework;
+package com.kayson.springframework.beans.factory.config;
 
 
 import lombok.Data;
