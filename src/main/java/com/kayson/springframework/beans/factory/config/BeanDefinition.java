@@ -1,7 +1,10 @@
 package com.kayson.springframework.beans.factory.config;
 
 
+import com.kayson.springframework.beans.PropertyValues;
 import lombok.Data;
+
+import java.util.ArrayList;
 
 /**
  * A BeanDefinition describes a bean instance, which has property values, constructor argument values, and further information supplied by concrete implementations.
@@ -17,9 +20,15 @@ public class BeanDefinition {
     /*** version 2 */
     private Class beanClass;
 
+    private PropertyValues propertyValues;
+
     public BeanDefinition(Class bean) {
         this.beanClass = bean;
+        this.propertyValues = new PropertyValues();
     }
 
-
+    public BeanDefinition(Class beanClass, PropertyValues propertyValues) {
+        this.beanClass = beanClass;
+        this.propertyValues = propertyValues != null ? propertyValues : new PropertyValues();
+    }
 }

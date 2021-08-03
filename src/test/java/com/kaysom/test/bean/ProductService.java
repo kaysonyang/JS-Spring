@@ -6,6 +6,9 @@ import lombok.ToString;
 public class ProductService {
 
     private String name;
+    private UserDao userDao;
+    private String uId;
+
 
     public ProductService() {
     }
@@ -17,5 +20,9 @@ public class ProductService {
     public String getProductName() {
         String item = "water";
         return item;
+    }
+
+    public void queryUserInfo() {
+        System.out.println("查询用户信息：" + userDao.queryUserName(uId));
     }
 }
