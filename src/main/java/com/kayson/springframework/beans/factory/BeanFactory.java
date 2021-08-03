@@ -1,4 +1,4 @@
-package com.kayson.springframework;
+package com.kayson.springframework.beans.factory;
 
 import com.kayson.springframework.beans.BeansException;
 import com.kayson.springframework.beans.factory.config.BeanDefinition;
@@ -58,4 +58,6 @@ public interface BeanFactory {
 
 
     Object getBean(String name, Object... args) throws BeansException;
+
+    <T> T getBean(String name, Class<T> requiredType) throws BeansException;
 }
