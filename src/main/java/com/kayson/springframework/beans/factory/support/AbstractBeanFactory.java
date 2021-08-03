@@ -25,10 +25,10 @@ public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry i
         }
 
         BeanDefinition beanDefinition = getBeanDefinition(name);
-        return (T) createBean(name, beanDefinition);
+        return (T) createBean(name, beanDefinition, args);
     }
 
     protected abstract BeanDefinition getBeanDefinition(String beanName) throws BeansException;
 
-    protected abstract Object createBean(String beanName, BeanDefinition beanDefinition) throws BeansException;
+    protected abstract Object createBean(String beanName, BeanDefinition beanDefinition, Object[] args) throws BeansException;
 }
