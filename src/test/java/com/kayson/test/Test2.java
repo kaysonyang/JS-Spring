@@ -1,6 +1,6 @@
-package com.kaysom.test;
+package com.kayson.test;
 
-import com.kaysom.test.bean.ProductService;
+import com.kayson.test.bean.ProductService;
 import com.kayson.springframework.beans.factory.config.BeanDefinition;
 import com.kayson.springframework.beans.factory.support.DefaultListableBeanFactory;
 import net.sf.cglib.proxy.Enhancer;

@@ -1,7 +1,7 @@
-package com.kaysom.test;
+package com.kayson.test;
 
 import cn.hutool.core.io.IoUtil;
-import com.kaysom.test.bean.ProductService;
+import com.kayson.test.bean.ProductService;
 import com.kayson.springframework.beans.factory.support.DefaultListableBeanFactory;
 import com.kayson.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 import com.kayson.springframework.core.io.DefaultResourceLoader;

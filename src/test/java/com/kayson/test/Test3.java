@@ -1,7 +1,7 @@
-package com.kaysom.test;
+package com.kayson.test;
 
-import com.kaysom.test.bean.ProductService;
-import com.kaysom.test.bean.UserDao;
+import com.kayson.test.bean.ProductService;
+import com.kayson.test.bean.UserDao;
 import com.kayson.springframework.beans.PropertyValue;
 import com.kayson.springframework.beans.PropertyValues;
 import com.kayson.springframework.beans.factory.config.BeanDefinition;

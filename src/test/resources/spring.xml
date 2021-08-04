@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans>
 
-    <bean id="userDao" class="com.kaysom.test.bean.UserDao"/>
+    <bean id="userDao" class="com.kayson.test.bean.UserDao"/>
 
-    <bean id="productService" class="com.kaysom.test.bean.ProductService">
+    <bean id="productService" class="com.kayson.test.bean.ProductService">
         <property name="uId" value="10001"/>
         <property name="userDao" ref="userDao"/>
     </bean>

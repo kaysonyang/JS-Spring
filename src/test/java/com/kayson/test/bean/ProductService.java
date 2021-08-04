@@ -1,4 +1,4 @@
-package com.kaysom.test.bean;
+package com.kayson.test.bean;
 
 import lombok.ToString;
 
