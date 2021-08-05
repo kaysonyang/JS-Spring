@@ -1,14 +1,18 @@
 package com.kayson.test.bean;
 
-import com.kayson.springframework.beans.factory.DisposableBean;
-import com.kayson.springframework.beans.factory.InitializingBean;
+import com.kayson.springframework.beans.BeansException;
+import com.kayson.springframework.beans.factory.*;
+import com.kayson.springframework.context.ApplicationContext;
+import com.kayson.springframework.context.ApplicationContextAware;
 
-public class UserService implements InitializingBean, DisposableBean {
+public class UserService implements InitializingBean, DisposableBean, BeanNameAware, BeanClassLoaderAware, ApplicationContextAware, BeanFactoryAware {
     private String uId;
     private String company;
     private String location;
     private UserDao userDao;
 
+    private ApplicationContext applicationContext;
+    private BeanFactory beanFactory;
     public String queryUserInfo() {
         return userDao.queryUserName(uId) + "," + company + "," + location;
     }
@@ -54,5 +58,34 @@ public class UserService implements InitializingBean, DisposableBean {
     @Override
     public void afterPropertiesSet() throws Exception {
         System.out.println("执行：UserService.afterPropertiesSet");
+    }
+
+
+    @Override
+    public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
+        this.beanFactory = beanFactory;
+    }
+
+    @Override
+    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+        this.applicationContext = applicationContext;
+    }
+
+    @Override
+    public void setBeanName(String name) {
+        System.out.println("Bean Name is：" + name);
+    }
+
+    @Override
+    public void setBeanClassLoader(ClassLoader classLoader) {
+        System.out.println("ClassLoader：" + classLoader);
+    }
+
+    public ApplicationContext getApplicationContext() {
+        return applicationContext;
+    }
+
+    public BeanFactory getBeanFactory() {
+        return beanFactory;
     }
 }
