@@ -17,4 +17,16 @@ public class UserDao {
         return hashMap.get(uId);
     }
 
+    public void initDataMethod(){
+        System.out.println("执行：init-method");
+        hashMap.put("10001", "kayson");
+        hashMap.put("10002", "tom");
+        hashMap.put("10003", "lucy");
+    }
+
+    public void destroyDataMethod(){
+        System.out.println("执行：destroy-method");
+        hashMap.clear();
+    }
+
 }

@@ -6,6 +6,8 @@ import lombok.Data;
 
 import java.util.ArrayList;
 
+import static com.kayson.springframework.beans.factory.config.ConfigurableBeanFactory.SCOPE_SINGLETON;
+
 /**
  * A BeanDefinition describes a bean instance, which has property values, constructor argument values, and further information supplied by concrete implementations.
  * This is just a minimal interface: The main intention is to allow a BeanFactoryPostProcessor to introspect and modify property values and other bean metadata.
@@ -26,6 +28,12 @@ public class BeanDefinition {
 
     private String destroyMethodName;
 
+    private String scope = SCOPE_SINGLETON;
+
+    private boolean singleton = true;
+
+    private boolean prototype = false;
+
     public BeanDefinition(Class bean) {
         this.beanClass = bean;
         this.propertyValues = new PropertyValues();
@@ -35,4 +43,6 @@ public class BeanDefinition {
         this.beanClass = beanClass;
         this.propertyValues = propertyValues != null ? propertyValues : new PropertyValues();
     }
+
+
 }
