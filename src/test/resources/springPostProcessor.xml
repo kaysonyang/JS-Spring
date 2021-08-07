@@ -19,4 +19,12 @@
     </bean>
 
     <bean id="proxyUserDao" class="com.kayson.test.bean.ProxyBeanFactory"/>
+
+
+
+    <bean class="com.kayson.test.event.ContextRefreshedEventListener"/>
+
+    <bean class="com.kayson.test.event.CustomEventListener"/>
+
+    <bean class="com.kayson.test.event.ContextClosedEventListener"/>
 </beans>
